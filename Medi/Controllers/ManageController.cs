@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Medi.Models;
+using System.Security.Claims;
 
 namespace Medi.Controllers
 {
@@ -63,9 +64,18 @@ namespace Medi.Controllers
                 : message == ManageMessageId.RemovePhoneSuccess ? "Usunięto numer telefonu."
                 : "";
 
+            
             var userId = User.Identity.GetUserId();
+            var user = UserManager.FindById(User.Identity.GetUserId());
+            var roles = ((ClaimsIdentity)User.Identity).Claims
+                .Where(c => c.Type == ClaimTypes.Role)
+                .Select(c => c.Value);
             var model = new IndexViewModel
             {
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                UserName = user.UserName,
+                UserRoles = roles.Single().ToString(),
                 HasPassword = HasPassword(),
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),

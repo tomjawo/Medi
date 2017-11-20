@@ -9,7 +9,32 @@
 <div>
     <h4>Zmień ustawienia konta</h4>
     <hr />
+
+
     <dl class="dl-horizontal">
+        <dt>Nazwa użytkownika: </dt>
+        <dd>
+          @Model.UserName
+        </dd>
+
+        <dt> Imię: </dt>
+        <dd>
+            @Model.FirstName
+        </dd>
+
+        <dt> Nazwisko: </dt>
+        <dd>
+            @Model.LastName
+        </dd>
+        <dt> Stanowisko: </dt>
+        <dd>
+            @Model.UserRoles
+        </dd>
+
+
+
+
+
         <dt>Hasło:</dt>
         <dd>
             [
@@ -23,11 +48,18 @@
             }
             ]
         </dd>
-        <dt>Logowania zewnętrzne:</dt>
+        @*<dt>Stanowiska:</dt>
+        <dd>
+            [
+            @Html.ActionLink("Zarządzaj Stanowiskami", "Rule")
+            ]
+        </dd>*@
+
+        @*<dt>Logowania zewnętrzne:</dt>
         <dd>
             @Model.Logins.Count [
             @Html.ActionLink("Zarządzaj", "ManageLogins") ]
-        </dd>
+        </dd>*@
         @*
             Numery telefonów mogą być używane jako drugi składnik w systemie uwierzytelniania dwuskładnikowego.
              
@@ -56,12 +88,12 @@
                 }
             </dd>
         *@
-        <dt>Uwierzytelnianie dwuetapowe:</dt>
+        @*<dt>Uwierzytelnianie dwuetapowe:</dt>
         <dd>
             <p>
                 Nie skonfigurowano dostawców uwierzytelniania dwuskładnikowego. Zapoznaj się z <a href="https://go.microsoft.com/fwlink/?LinkId=403804">tym artykułem</a>,
                 aby uzyskać szczegółowe informacje dotyczące konfigurowania tej aplikacji ASP.NET do obsługi uwierzytelniania dwuskładnikowego.
-            </p>
+            </p>*@
             @*@if (Model.TwoFactor)
                 {
                     using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -82,6 +114,6 @@
                         </text>
                     }
                 }*@
-        </dd>
+        @*</dd>*@
     </dl>
 </div>

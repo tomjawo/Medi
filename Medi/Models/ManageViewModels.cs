@@ -7,6 +7,21 @@ namespace Medi.Models
 {
     public class IndexViewModel
     {
+
+       
+        [Display(Name = "Imię")]
+        public string FirstName { get; set; }
+        
+        [Display(Name = "Nazwisko")]
+        public string LastName { get; set; }
+
+       
+        [Display(Name = "Rodzaj użytkownika")]
+        public string UserRoles { get; set; }
+
+      
+        [Display(Name = "Nazwa użytkownika")]
+        public string UserName { get; set; }
         public bool HasPassword { get; set; }
         public IList<UserLoginInfo> Logins { get; set; }
         public string PhoneNumber { get; set; }

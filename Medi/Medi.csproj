@@ -190,16 +190,46 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ExaminationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711161303239_InitialCreate.cs" />
+    <Compile Include="Migrations\201711161303239_InitialCreate.Designer.cs">
+      <DependentUpon>201711161303239_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711161412090_ModelsUpdateForRoles.cs" />
+    <Compile Include="Migrations\201711161412090_ModelsUpdateForRoles.Designer.cs">
+      <DependentUpon>201711161412090_ModelsUpdateForRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711161546239_AddedFieldsToModel.cs" />
+    <Compile Include="Migrations\201711161546239_AddedFieldsToModel.Designer.cs">
+      <DependentUpon>201711161546239_AddedFieldsToModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711171613147_AddingExaminationModels.cs" />
+    <Compile Include="Migrations\201711171613147_AddingExaminationModels.Designer.cs">
+      <DependentUpon>201711171613147_AddingExaminationModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711181928306_update.cs" />
+    <Compile Include="Migrations\201711181928306_update.Designer.cs">
+      <DependentUpon>201711181928306_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711191650599_x.cs" />
+    <Compile Include="Migrations\201711191650599_x.Designer.cs">
+      <DependentUpon>201711191650599_x.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ExaminationModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -258,6 +288,14 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\CreateUser.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\Examination\Index.cshtml" />
+    <Content Include="Views\Examination\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -274,6 +312,26 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201711161303239_InitialCreate.resx">
+      <DependentUpon>201711161303239_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711161412090_ModelsUpdateForRoles.resx">
+      <DependentUpon>201711161412090_ModelsUpdateForRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711161546239_AddedFieldsToModel.resx">
+      <DependentUpon>201711161546239_AddedFieldsToModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711171613147_AddingExaminationModels.resx">
+      <DependentUpon>201711171613147_AddingExaminationModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711181928306_update.resx">
+      <DependentUpon>201711181928306_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711191650599_x.resx">
+      <DependentUpon>201711191650599_x.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

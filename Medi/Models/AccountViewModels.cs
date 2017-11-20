@@ -48,10 +48,16 @@ namespace Medi.Models
 
     public class LoginViewModel
     {
+       
+
         [Required]
-        [Display(Name = "Adres e-mail")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "UserName")]
+        public string UserName { get; set; }
+
+        //[Required]
+        //[Display(Name = "Adres e-mail")]
+        //[EmailAddress]
+        //public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -64,6 +70,24 @@ namespace Medi.Models
 
     public class RegisterViewModel
     {
+        public string Id { get; set; }
+
+        [Required]
+        [Display(Name = "Imię")]
+        public string FirstName { get; set; }
+        [Required]
+        [Display(Name = "Nazwisko")]
+        public string LastName { get; set; }
+
+      
+        [Display(Name = "Rodzaj użytkownika")]
+        
+        public string UserRoles { get; set; } 
+
+        [Required]
+        [Display(Name = "Nazwa użytkownika")]
+        public string UserName { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Adres e-mail")]
@@ -108,5 +132,43 @@ namespace Medi.Models
         [EmailAddress]
         [Display(Name = "Adres e-mail")]
         public string Email { get; set; }
+    }
+
+    public class EditViewModel
+    {
+
+        public string Id { get; set; }
+
+        [Required]
+        [Display(Name = "Imię")]
+        public string FirstName { get; set; }
+        [Required]
+        [Display(Name = "Nazwisko")]
+        public string LastName { get; set; }
+
+
+        [Display(Name = "Rodzaj użytkownika")]
+
+        public string UserRoles { get; set; }
+
+        [Required]
+        [Display(Name = "Nazwa użytkownika")]
+        public string UserName { get; set; }
+
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Adres e-mail")]
+        public string Email { get; set; }
+
+        //[Required]
+        //[StringLength(100, ErrorMessage = "{0} musi zawierać co najmniej następującą liczbę znaków: {2}.", MinimumLength = 6)]
+        //[DataType(DataType.Password)]
+        //[Display(Name = "Hasło")]
+        //public string Password { get; set; }
+
+        //[DataType(DataType.Password)]
+        //[Display(Name = "Potwierdź hasło")]
+        //[Compare("Password", ErrorMessage = "Hasło i jego potwierdzenie są niezgodne.")]
+        //public string ConfirmPassword { get; set; }
     }
 }

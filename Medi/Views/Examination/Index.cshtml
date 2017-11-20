@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Medi.Models.ExaminationViewModel>
+
+@{
+    ViewBag.Title = "Lista zleconych badań";
+}
+
+<h2>Lista badań:</h2>
+ 
+@if (Model.Count() == 0)
+{
+    <h3> @ViewBag.Message </h3>
+}
+    
+
+
