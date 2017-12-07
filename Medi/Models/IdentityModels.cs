@@ -12,6 +12,8 @@ namespace Medi.Models
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        ICollection<Examination> Exams { get; set; }
+
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

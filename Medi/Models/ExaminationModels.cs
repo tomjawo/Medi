@@ -27,9 +27,9 @@ namespace Medi.Models
         public DateTime PreparedDate { get; set; }
         public string Description { get; set; }
         public List<String> FileUrls { get; set; }
+        public ApplicationUser User { get; set; }
 
-
-        public List<ApplicationUser> Users { get; set; }
+        // public List<ApplicationUser> Users { get; set; }
     }
 
 

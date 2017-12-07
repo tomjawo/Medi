@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 
 
 namespace Medi.Controllers
@@ -21,25 +22,31 @@ namespace Medi.Controllers
         [Authorize(Roles ="Admin , Patient")]
         public ActionResult Index()
         {
-
+            _context.Configuration.ProxyCreationEnabled = false;
             ExaminationViewModel data = new ExaminationViewModel()
             {
                 Exam = _context.Exams.Single(),
                 Users = _context.Users.ToList()
             };
 
+            var currentUserId = User.Identity.GetUserId();
+            List<Examination> exams = _context.Exams.Where(u => u.User.Id == currentUserId).ToList();
+                
+
+
+
             ViewBag.Message = "Nie masz żadnych badań, Gratulacje!";
-            return View(data);
+            return View(exams);
         }
 
         //GET
        // [Authorize(Roles ="Medical")]
         public ActionResult Create()
         {
-
+            _context.Configuration.ProxyCreationEnabled = false;
             ExaminationViewModel y = new ExaminationViewModel
             {
-                Exam = _context.Exams.Single(),
+                
                 Users = _context.Users.ToList()
             };
 

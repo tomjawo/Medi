@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Medi.Models.ExaminationViewModel>
+﻿@model List<Medi.Models.Examination>
 
 @{
     ViewBag.Title = "Lista zleconych badań";
@@ -10,6 +10,14 @@
 {
     <h3> @ViewBag.Message </h3>
 }
+
+@foreach(var exam in Model)
+{
+    @exam.ExaminationTape
     
+    <br>
+    @exam.OrderedBy.FirstName @exam.OrderedBy.LastName
+}
+
 
 
